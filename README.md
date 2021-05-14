@@ -14,9 +14,13 @@
   <a href="#autor"> Autor </a>
 </p>
 
+<hr>
+
 <h4 align="center"> 
 	🚧 Status 🚀 em progresso !
 </h4>
+
+<hr>
 
 Você pode clonar esse repositório e testar os desafios, realizando alterações conforme sua necessidade.
 
