@@ -1,15 +1,14 @@
 <h1 align="center"> 50 Projects 50 Days </h1>
 
-<p align="center"> repositório do curso 50 Prjects 50 Days, código baseado no curso com algumas alterações conforme o meu gostos pessoais.
+<p align="center"> Repositório do curso 50 Projects 50 Days, código baseado no curso com algumas alterações conforme o meu gostos pessoais.
 
 <hr>
 
-Todos os projetos possui versão seu deploy na vercel, link disponível em seus README.
+<p align="center"> Todos os projetos possui versão seu deploy na vercel, link disponível em seus README.</p>
 
 <hr>
 
 <p align = "center">
-  <a href="#pre"> Pré-requisito </a> •
   <a href="#rodando"> Rodando projeto </a> •
   <a href="#tecnologia">Tecnologias</a> • 
   <a href="#autor"> Autor </a>
