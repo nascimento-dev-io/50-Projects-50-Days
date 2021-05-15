@@ -35,6 +35,10 @@ $ git clone <https://github.com/Nscmnt/50-Projects-50-Days>
 
 $ cd 50-Projects-50-Days
 
+# Acesse o VS Code
+
+$ code .
+
 ```
 
 <h2 id="tecnologia">🛠 Tecnologias</h2>

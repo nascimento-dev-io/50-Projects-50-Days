@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --line-border-fill: #3498db;
+  --line-border-empty: #e0e0e0;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: rgb(15, 139, 248);
+
+  margin-bottom: 8vh;
+}
+
+.progress-wrapper {
+  width: inherit;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-steps-wrapper {
+  max-width: 400px;
+  width: 350px;
+  height: 100px;
+
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress {
+  background-color: var(--line-border-fill);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 0%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.progress-steps-wrapper::before {
+  content: "";
+  background-color: var(--line-border-empty);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+}
+
+.progress-steps-wrapper .circle {
+  height: 40px;
+  width: 40px;
+
+  background-color: #fff;
+  color: #999;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 3px solid var(--line-border-empty);
+
+  transition: 0.4s ease;
+}
+
+.progress-buttons {
+  width: 500px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-buttons button {
+  width: 80px;
+  height: 30px;
+
+  border: none;
+  outline: none;
+
+  text-align: center;
+  font-weight: bold;
+  margin: 5px;
+
+  border-radius: 5px;
+
+  color: aliceblue;
+  background-color: rgb(15, 139, 248);
+
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: rgb(185, 181, 181);
+  cursor: not-allowed;
+}
+
+.circle.active {
+  border-color: var(--line-border-fill);
+}
