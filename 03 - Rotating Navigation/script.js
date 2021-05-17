@@ -1,12 +1,12 @@
-const header = document.querySelector("header");
-const main = document.querySelector(".content-wrapper");
-const lis = document.querySelectorAll(".nav-bar li");
+const menuRotation = document.querySelector("header");
+const article = document.querySelector(".content-wrapper");
+const sideNav = document.querySelectorAll(".nav-bar li");
 
-const showNav = () => {
-  lis.forEach((li) => li.classList.toggle("animation-nav"));
+const showNavBar = () => {
+  sideNav.forEach((li) => li.classList.toggle("animation-nav"));
 };
-header.onclick = function () {
+menuRotation.onclick = function () {
   this.classList.toggle("rotate");
-  main.classList.toggle("rotate-right");
-  showNav();
+  article.classList.toggle("rotate-right");
+  showNavBar();
 };
