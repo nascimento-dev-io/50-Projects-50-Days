@@ -6,4 +6,6 @@ Visit: https://progress-steps-theta.vercel.app/
 
 </br> <hr>
 
-![imagens gif](./.github/progressSteps.gif)
+<p align = "center"><img src= "./.github/progressSteps.gif"></p>
+
+<!-- ![imagens gif](./.github/progressSteps.gif) -->

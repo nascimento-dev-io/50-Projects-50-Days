@@ -6,4 +6,6 @@ Visit: https://expanding-cards-p8ulz8cdx-nscmnt.vercel.app/
 
 </br> <hr>
 
-![imagens gif](./.github/expandingCards.gif)
+<p align = "center"><img src= "./.github/expandingCards.gif"></p>
+
+<!-- ![imagens gif](./.github/expandingCards.gif) -->

@@ -6,4 +6,6 @@ Visit: https://rotating-navigation-dun.vercel.app/
 
 </br> <hr>
 
-![imagens gif](./.github/rotating-navigation.gif)
+<p align = "center"><img src= "./.github/rotating-navigation.gif"></p>
+
+<!-- ![imagens gif](./.github/rotating-navigation.gif) -->

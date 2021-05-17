@@ -6,4 +6,4 @@ Visit:
 
 </br> <hr>
 
-![imagens gif](./.github/searchInput.gif)
+<p align = "center"><img src= "./.github/searchInput.gif"></p>
