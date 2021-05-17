@@ -2,8 +2,6 @@
 
 <p align="center"> Projeto de criação de input search escodindo, aparecendo ao clicar no botão. </p>
 
-Visit:
-
 </br> <hr>
 
 <p align = "center"><img src= "./.github/searchInput.gif"></p>

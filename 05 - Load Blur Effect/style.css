@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=ubuntudisplay=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  font-family: "Ubuntu", sans-serif;
+
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80")
+    no-repeat center center/cover;
+}
+
+main {
+  width: inherit;
+  height: inherit;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  backdrop-filter: blur(20px);
+
+  /* @keyframes duration | timing-function | delay |  iteration-count | direction | fill-mode | play-state | name */
+
+  animation: 5s linear forwards blurEffect;
+}
+
+main .loading {
+  font-size: 3rem;
+
+  color: rgb(180, 179, 179);
+
+  transition: opacity 5.2s;
+}
+
+@keyframes blurEffect {
+  to {
+    backdrop-filter: blur(0px);
+  }
+}
