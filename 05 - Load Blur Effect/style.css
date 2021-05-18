@@ -40,7 +40,7 @@ main .loading {
 
   color: rgb(180, 179, 179);
 
-  transition: opacity 5.2s;
+  transition: opacity 5s;
 }
 
 @keyframes blurEffect {
