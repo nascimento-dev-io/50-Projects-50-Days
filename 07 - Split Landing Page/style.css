@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  font-family: "Roboto", sans-serif;
+  width: 100vw;
+
+  background-color: #c6cdf5;
+
+  display: flex;
+}
+
+section {
+  height: 100vh;
+
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-self: center;
+
+  transition: all 700ms ease;
+}
+
+section div {
+  padding-top: 10%;
+}
+
+section h1 {
+  font-size: 3rem;
+
+  color: whitesmoke;
+
+  text-align: center;
+}
+
+section .btn {
+  display: block;
+
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 0.8rem;
+
+  text-transform: uppercase;
+
+  height: 50px;
+  width: 150px;
+
+  border: 2px solid white;
+
+  cursor: pointer;
+
+  transition: all 400ms;
+}
+
+section.ps5-banner {
+  background: url("./images/ps.jpg");
+  background-color: rgba(44, 44, 48, 0.404);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section.ps5-banner:hover {
+  flex: 3;
+}
+
+section.xbox-banner {
+  background: url("./images/xbox.jpg");
+  background-color: rgba(43, 46, 219, 0.397);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section.xbox-banner:hover {
+  flex: 3;
+}
+
+.ps5-banner .wrapper-content-ps5 {
+  width: 100%;
+  height: inherit;
+
+  background-color: rgba(75, 72, 221, 0.582);
+}
+
+.wrapper-content-ps5 .btn:hover {
+  border: none;
+  background-color: rgb(60, 87, 240);
+}
+
+.xbox-banner .wrapper-content-xbox {
+  width: 100%;
+  height: inherit;
+
+  background-color: rgba(46, 46, 51, 0.651);
+}
+
+.wrapper-content-xbox .btn:hover {
+  border: none;
+  background-color: rgb(45, 204, 53);
+}

@@ -4,7 +4,7 @@
 
 <hr>
 
-<p align="center"> Todos os projetos possui versão seu deploy na vercel, link disponível em seus README.</p>
+<p align="center"> Todos os projetos possui gif de exemplo, disponível em seus README.</p>
 
 <hr>
 

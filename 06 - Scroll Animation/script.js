@@ -16,11 +16,7 @@ const containers = document.querySelectorAll(".container");
 
 const heightViewport = window.innerHeight;
 
-let count = 0;
 const showAnimation = (scrollingValue) => {
-  count++;
-
-  console.log(count);
   containers.forEach((container) => {
     const distanceToTop = container.getBoundingClientRect().top;
 
@@ -44,7 +40,7 @@ window.addEventListener("scroll", () => {
 
   setTimeout(function () {
     ticking = false;
-  }, 300);
+  }, 5);
 });
 
 window.onload = () => showAnimation(window.scrollY);
