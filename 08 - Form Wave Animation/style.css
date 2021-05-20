@@ -118,6 +118,18 @@ body {
 .wrapper-form-login .container-input input:focus,
 .wrapper-form-login .container-input input:valid {
   border-bottom-color: rgb(55, 161, 161);
+
+  animation-name: slide;
+  animation-duration: 800ms;
+}
+
+@keyframes slide {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 .wrapper-form-login form input[type="submit"] {
