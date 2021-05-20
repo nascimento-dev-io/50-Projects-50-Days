@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  font-family: "Muli", sans-serif;
+
+  height: 100vh;
+  width: 100vw;
+
+  background-color: rgb(222, 220, 226);
+  color: rgb(139, 138, 138);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.view {
+  width: 50vw;
+
+  padding: 15px 25px;
+
+  border-radius: 7px;
+
+  background-color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+
+  transition: all 200ms;
+}
+
+.view .box {
+  margin: 3px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.view .box h4 {
+  margin: 0;
+
+  font-weight: 400;
+
+  color: rgb(68, 67, 67);
+
+  font-size: 0.8rem;
+
+  margin-bottom: 3px;
+}
+
+.view .box .event {
+  width: 110px;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #fff;
+
+  border: 1px solid rgb(121, 117, 117);
+  margin: 0 3px;
+
+  padding: 10px 25px;
+}
+
+.view .box .event .info-key {
+  color: rgb(46, 45, 45);
+}
+
+.view .box .event .info-key:first-child::first-letter {
+  text-transform: uppercase;
+}
