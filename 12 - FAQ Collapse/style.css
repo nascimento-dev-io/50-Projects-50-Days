@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  font-family: "Muli", sans-serif;
+
+  height: 100vh;
+  width: 100vw;
+
+  background-color: rgb(226, 221, 221);
+
+  display: flex;
+  justify-content: center;
+}
+
+.container-asked {
+  max-width: 800px;
+  width: 600px;
+
+  padding: 20px 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-asked h1 {
+  color: rgb(39, 38, 38);
+
+  font-size: 2.185rem;
+}
+
+.ask-wrapper {
+  width: 90%;
+  height: 60px;
+
+  overflow-y: hidden;
+
+  border: 1.5px solid gray;
+  border-radius: 7px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px 35px 10px 20px;
+
+  margin-bottom: 8px;
+
+  position: relative;
+}
+
+.ask-wrapper button {
+  position: absolute;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  right: 10px;
+  top: 22px;
+
+  overflow: hidden;
+
+  border: none;
+  padding: 0;
+
+  font-size: 1rem;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.ask-wrapper h3 {
+  margin: 0;
+
+  font-size: 1.2rem;
+}
+
+.ask-wrapper.active {
+  height: auto;
+  background-color: #fff;
+}
+
+.ask-wrapper.active .fa-chevron-down {
+  display: none;
+}
+
+.ask-wrapper.active > button {
+  background-color: rgb(218, 213, 213);
+}
+
+.ask-wrapper.active::before,
+.ask-wrapper.active::after {
+  content: "\275D";
+
+  color: steelblue;
+  opacity: 0.2;
+
+  font-family: "Font Awesome 5 Free";
+
+  font-size: 4rem;
+
+  position: absolute;
+  top: 35px;
+  left: 5px;
+
+  z-index: 0;
+}

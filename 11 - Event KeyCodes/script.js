@@ -1,29 +1,3 @@
-/**
- * <div class="view">
-        Press any key to get the KeyCode <br />
-        <div class="box">
-          <h4>event.key</h4>
-          <div class="event">
-            <div class="info-key">Tab</div>
-          </div>
-        </div>
-
-        <div class="box">
-          <h4>event.keyCode</h4>
-          <div class="event">
-            <div class="info-key">9</div>
-          </div>
-        </div>
-
-        <div class="box">
-          <h4>event.code</h4>
-          <div class="event">
-            <div class="info-key">Tab</div>
-          </div>
-        </div>
-      </div>
- */
-
 const main = document.querySelector("main");
 
 const getInfoKey = (event) => {
