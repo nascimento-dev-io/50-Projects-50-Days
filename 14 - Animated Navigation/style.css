@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  font-family: "Muli", sans-serif;
+
+  background: linear-gradient(
+    to bottom,
+    #f5f3f3 0%,
+    #f5f3f3 50%,
+    teal 50%,
+    teal 100%
+  );
+
+  height: 100vh;
+  width: 100vw;
+}
+
+.menu {
+  width: max-content;
+  height: max-content;
+
+  background-color: #fff;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  padding: 5px 8px;
+
+  box-shadow: 2px 2px 5px gray;
+
+  border-radius: 5px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  transition: width 4s;
+}
+
+.menu ul {
+  height: 50px;
+  width: 220px;
+  list-style: none;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  margin: 0;
+  padding: 0;
+
+  transition: width 2s;
+}
+
+.menu ul.toggle-menu {
+  width: 0;
+}
+
+.menu ul.toggle-menu > li {
+  opacity: 0;
+
+  transform: translateX(150px) rotateY(180deg);
+}
+
+.menu ul li {
+  padding: 8px 5px;
+
+  transition: all 1.8s ease-out;
+}
+
+.menu .btn-close {
+  width: 50px;
+  height: 50px;
+
+  cursor: pointer;
+
+  position: relative;
+}
+
+.btn-close .line1,
+.btn-close .line2 {
+  width: 18px;
+  height: 1.5px;
+
+  position: absolute;
+  top: 50%;
+  left: 30%;
+
+  background-color: steelblue;
+
+  transition: transform 1.8s;
+}
+
+.btn-close .line1 {
+  transform: rotate(-310deg);
+}
+
+.btn-close .line2 {
+  transform: rotate(310deg);
+}
+
+ul.toggle-menu ~ .btn-close .line1 {
+  transform: rotate(-1800deg) translateY(-3px);
+}
+
+ul.toggle-menu ~ .btn-close .line2 {
+  transform: rotate(1800deg) translateY(3px);
+}

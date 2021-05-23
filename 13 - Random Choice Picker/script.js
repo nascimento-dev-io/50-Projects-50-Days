@@ -11,7 +11,7 @@ function filterTag() {
     .filter((valid) => valid !== "")
     .forEach((valueTag) => {
       if (!arrTags.includes(valueTag)) {
-        arrTags.push(valueTag);
+        arrTags.push(valueTag.trim());
       }
     });
   insertTag();
@@ -34,23 +34,23 @@ function insertTag() {
 
 function randonTag() {
   const tags = document.querySelectorAll(".tag");
-  let tagChoice = 0;
+  let tagChosen = 0;
   let count = 0;
 
   const randonChoice = setInterval(() => {
-    tags[tagChoice].classList.remove("choice");
+    tags[tagChosen].classList.remove("choice");
 
-    tagChoice = Math.round(Math.random() * (tags.length - 1));
+    tagChosen = Math.round(Math.random() * (tags.length - 1));
 
-    tags[tagChoice].classList.add("choice");
+    tags[tagChosen].classList.add("choice");
 
     count++;
 
-    if (count > 5) {
+    if (count > 10) {
       clearInterval(randonChoice);
-      showWin(tags[tagChoice]);
+      showWin(tags[tagChosen]);
     }
-  }, 700);
+  }, 500);
 
   textArea.value = "";
 }
@@ -73,5 +73,6 @@ modal.addEventListener("click", () => {
   if (event.target === modal) {
     modal.classList.remove("show");
     window.location.reload();
+    textArea.focus();
   }
 });
