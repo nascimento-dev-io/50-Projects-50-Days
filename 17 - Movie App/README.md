@@ -1,7 +1,7 @@
 <h1 align="center"> Animated Navigation </h1>
 
-<p align="center"> Projeto de criação de um controle da quantidade agua que vocÊ bebeu, mostrando de forma visual as informações</p>
+<p align="center"> Projeto de criação de uma página com integração com a TMDB API listando filmes e realizando filtro via campo de busca.</p>
 
 </br> <hr>
 
-<p align = "center"><img src= "./.github/Drink Water.gif"></p>
+<p align = "center"><img src= "./.github/Movie App.gif"></p>

@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Roboto", sans-serif;
+
+  background-image: url("./images/natureza1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: background 0.7s ease-in-out;
+}
+
+body::before {
+  content: "";
+
+  width: inherit;
+  height: inherit;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: -1;
+
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.wrapper {
+  width: 70vw;
+  height: 70vh;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper .slide {
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url("./images/natureza1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  position: absolute;
+  top: -15vh;
+  left: -15vw;
+
+  z-index: 2;
+
+  transform: opacity 0.7s ease;
+}
+
+button {
+  width: 50px;
+  height: 45px;
+
+  background: transparent;
+
+  border: 1px solid orange;
+
+  color: aliceblue;
+  font-size: 1.2rem;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(0.95);
+}
+
+button[data-left] {
+  position: absolute;
+  top: 50%;
+  left: 11vw;
+
+  border-right: none;
+
+  transform: translateY(-50%);
+}
+
+button[data-right] {
+  position: absolute;
+  top: 50%;
+  right: 11vw;
+
+  border-left: none;
+
+  transform: translateY(-50%);
+}
