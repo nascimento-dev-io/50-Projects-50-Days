@@ -40,15 +40,18 @@ header .search {
   background-color: inherit;
 }
 
+header .search:focus {
+  background-color: rgb(6, 32, 66);
+}
+
 .movies-wrapper {
   width: 100vw;
 
-  padding: 10px;
-
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 
-  gap: 20px;
+  gap: 15px;
 }
 
 .movies-wrapper .movie-container {
@@ -96,14 +99,25 @@ header .search {
 
   text-align: center;
 
-  color: orangered;
-
   background-color: rgb(15, 46, 87);
 
   border-radius: 3px;
 
   font-size: 0.7rem;
 }
+
+.movie-container .title span.green {
+  color: lightgreen;
+}
+
+.movie-container .title span.orange {
+  color: orange;
+}
+
+.movie-container .title span.red {
+  color: red;
+}
+
 .movie-container .sinopse {
   height: 300px;
   width: 100%;
