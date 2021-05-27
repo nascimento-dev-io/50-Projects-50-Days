@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+
+  gap: 8px;
+
+  font-family: "Roboto", sans-serif;
+
+  background-color: teal;
+}
+h1 {
+  font-size: 3.5rem;
+  position: absolute;
+
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.drag-container {
+  width: 150px;
+  height: 150px;
+
+  background-color: #f0f0f0;
+  border: 3px solid black;
+
+  cursor: pointer;
+
+  position: relative;
+}
+
+.drag-container .item-draggable {
+  width: 144px;
+  height: 144px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #f0f0f0;
+  font-weight: bold;
+
+  overflow: hidden;
+
+  background-color: rgb(238, 113, 30);
+  background-image: url("./.github/perfil.jpg");
+  background-size: cover;
+  background-position: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.drag-container.dragzone-active {
+  background-color: black;
+
+  border: 3px dotted white;
+}
