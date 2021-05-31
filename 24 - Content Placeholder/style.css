@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Roboto", sans-serif;
+
+  background-color: #fcf0f0;
+}
+
+.card {
+  width: 270px;
+
+  border-radius: 10px;
+
+  background-color: #fff;
+
+  box-shadow: 0 0 1.28px rgb(78, 76, 76);
+
+  transition: all 0.4s;
+
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 0 3.28px rgb(78, 76, 76);
+}
+
+.card .card-image {
+  width: 100%;
+  height: 180px;
+
+  object-fit: cover;
+
+  transition: all 0.5s;
+}
+
+.card .card-image:hover {
+  transform: scale(1.1);
+}
+
+.card .card-content {
+  width: 90%;
+
+  padding: 5px;
+
+  margin: 0 auto;
+  font-size: 0.8rem;
+}
+
+.card-content h2 {
+  font-size: 0.9rem;
+
+  font-weight: bold;
+}
+
+.card-perfil {
+  width: 70%;
+
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 10px;
+}
+
+.card-perfil img {
+  width: 30px;
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  margin-right: 5px;
+}
+
+.perfil-name-date {
+  display: flex;
+  flex-direction: column;
+}
+
+.perfil-name-date span:last-child {
+  color: lightslategray;
+  font-size: 0.6rem;
+
+  font-weight: bold;
+}
