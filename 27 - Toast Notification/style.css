@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: linear-gradient(to bottom, teal, rgb(18, 167, 167));
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Roboto", sans-serif;
+}
+
+.btn-notification {
+  border: none;
+
+  outline: none;
+
+  padding: 20px;
+
+  background-color: whitesmoke;
+  color: teal;
+
+  font-weight: bold;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+.btn-notification:active {
+  transform: scale(0.98);
+}
+
+.toast-wrapper {
+  max-width: 250px;
+  height: auto;
+
+  padding: 10px;
+
+  position: absolute;
+  bottom: 3%;
+  right: 3%;
+
+  /* background-color: yellow; */
+}
+
+.toast-wrapper .toast {
+  width: 100%;
+
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+
+  background-color: rgb(236, 227, 227);
+
+  padding: 15px;
+  border-radius: 5px;
+
+  margin-bottom: 10px;
+}
+
+.toast.info {
+  color: rebeccapurple;
+}
+
+.toast.success {
+  color: green;
+}
+
+.toast.error {
+  color: red;
+}

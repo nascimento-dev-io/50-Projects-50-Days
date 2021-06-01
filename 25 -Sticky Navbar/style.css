@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  width: 100vw;
+
+  overflow-x: hidden;
+
+  font-family: "Roboto", sans-serif;
+}
+
+.sticky-menu {
+  width: 100vw;
+  height: 60px;
+
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  z-index: 2;
+
+  background-color: rgb(36, 33, 33);
+
+  transition: 0.7s;
+}
+
+.sticky-menu.sticky-toggle {
+  background-color: rgb(247, 241, 241);
+}
+
+.sticky-menu.sticky-toggle > .header-content {
+  color: black;
+}
+
+.sticky-menu.sticky-toggle > .header-content ul li a {
+  color: black;
+}
+
+.header-content {
+  width: 70%;
+  height: inherit;
+
+  margin: 0 auto;
+
+  font-size: 0.9rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-weight: bold;
+
+  color: white;
+}
+
+.header-content span {
+  font-size: 1.3rem;
+}
+
+.header-content ul {
+  margin: 0;
+  list-style: none;
+
+  display: flex;
+}
+.header-content ul li {
+  margin: 3px;
+}
+
+.header-content ul li a {
+  padding: 5px 8px;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  transition: 0.7s;
+}
+
+.header-content ul li a:hover {
+  color: orange;
+}
+
+.sticky-menu.sticky-toggle > .header-content ul li a:hover {
+  color: orange;
+}
+
+.banner {
+  width: 100vw;
+  height: calc(100vh - 60px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  background-image: url("./.github/banner.jpg");
+  background-size: cover;
+  background-position: center;
+
+  color: white;
+
+  background-color: teal;
+}
+
+.banner::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+
+  width: 100vw;
+  height: calc(100vh - 60px);
+
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.banner h1 {
+  margin: 10px 0;
+}
+
+.banner p {
+  font-size: 1.1 rem;
+}
+
+.article {
+  width: 70vw;
+  height: auto;
+
+  margin: 0 auto;
+
+  padding: 20px 5px;
+}
