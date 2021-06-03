@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #3b3b98;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Muli", sans-serif;
+}
+
+.wrapper {
+  width: 280px;
+
+  padding: 15px;
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: #23235b;
+}
+
+.wrapper h1 {
+  margin: 0;
+
+  margin-bottom: 12px;
+
+  font-size: 1.2rem;
+}
+
+.input-container {
+  width: 100%;
+  height: 35px;
+
+  /* padding: 5px; */
+
+  position: relative;
+
+  margin-bottom: 10px;
+}
+
+.input-container input {
+  width: 100%;
+  height: 30px;
+
+  border: none;
+  outline: none;
+
+  padding: 5px 35px 5px 8px;
+
+  font-size: 1.075rem;
+
+  color: aliceblue;
+
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.input-container button {
+  width: 30px;
+  height: 28px;
+
+  outline: none;
+  border: 1px solid rgb(9, 9, 48);
+
+  background-color: rgb(58, 58, 136);
+
+  cursor: pointer;
+
+  position: absolute;
+  right: 1px;
+  top: 1px;
+}
+
+/* .input-container i {
+  color: white;
+} */
+
+#password-length {
+  width: 36px;
+  height: 18px;
+
+  outline: none;
+}
+
+.password-options {
+  width: 100%;
+}
+
+.setting {
+  width: 100%;
+  height: 30px;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 0.8rem;
+}
+
+.wrapper .btn-generate {
+  width: 100%;
+  height: 35px;
+
+  color: white;
+  border: none;
+
+  outline: none;
+
+  cursor: pointer;
+
+  background-color: #3b3b98;
+}
+
+.wrapper .btn-generate:active {
+  transform: scale(0.99);
+}
