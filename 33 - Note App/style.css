@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+
+:root {
+  --bg-container-light: rgb(105, 238, 238);
+  --bg-principal: rgb(135, 182, 41);
+  --font-secondary: white;
+  --font-primary: rgb(27, 26, 26);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  color: var(--font-primary);
+
+  font-family: "Poppins", sans-serif;
+}
+
+#note-app {
+  width: 100vw;
+  min-height: 100vh;
+
+  padding: 80px 20px;
+
+  background-color: var(--bg-container-light);
+}
+#note-app .cards {
+  display: flex;
+
+  flex-wrap: wrap;
+}
+
+#note-app .add-note {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+
+  padding: 5px 8px;
+
+  text-align: center;
+  font-weight: bold;
+  color: var(--font-secondary);
+
+  background: none;
+  border: none;
+
+  background-color: var(--bg-principal);
+
+  cursor: pointer;
+}
+
+.note-card {
+  width: 260px;
+  height: auto;
+
+  background-color: whitesmoke;
+
+  box-shadow: 0 0 10px gray;
+
+  margin: 15px;
+}
+
+.note-card .toolbar {
+  width: 100%;
+  height: 28px;
+
+  background-color: var(--bg-principal);
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.toolbar > div {
+  margin: 0 5px;
+
+  font-size: 0.9rem;
+
+  color: var(--font-secondary);
+
+  cursor: pointer;
+}
+
+.note-card .note-text,
+.note-card .main {
+  width: 100%;
+  min-height: 252px;
+
+  resize: none;
+  border: none;
+
+  font-weight: bold;
+
+  padding: 10px;
+
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
