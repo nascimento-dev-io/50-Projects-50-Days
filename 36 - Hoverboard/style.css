@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #111;
+
+  font-family: "Roboto", sans-serif;
+}
+
+.hoverboard {
+  width: 300px;
+  height: auto;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hoverboard .hover {
+  width: 15px;
+  height: 15px;
+
+  margin: 2px;
+
+  background-color: #1d1d1d;
+
+  transition: 0.5s ease;
+}
