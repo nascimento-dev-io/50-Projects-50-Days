@@ -1,8 +1,18 @@
-const hovers = document.querySelectorAll(".hover");
+// const hovers = document.querySelectorAll(".hover");
 
-hovers.forEach((hover) => {
-  hover.addEventListener("mouseover", highligth);
-});
+// hovers.forEach((hover) => {
+//   hover.addEventListener("mouseover", highligth);
+// });
+
+const hoverboard = document.querySelector(".hoverboard");
+
+for (let i = 0; i < 405; i++) {
+  const div = document.createElement("div");
+  div.classList.add("hover");
+  div.addEventListener("mouseover", highligth);
+
+  hoverboard.appendChild(div);
+}
 
 function highligth({ target }) {
   const color = newBackgroundColor();
