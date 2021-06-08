@@ -209,37 +209,38 @@ function createCard(pokemon) {
 }
 
 // filtrando os pokemons
-searchInput.addEventListener("input", getFilteredPokemon);
+searchInput.addEventListener("input", handleInput);
 searchInput.focus();
 
-function getFilteredPokemon({ target }) {
+function handleInput({ target }) {
   const inputValue = target.value.toLowerCase();
-
   const regex = new RegExp(`^${inputValue}`);
+  let pokemonMatch = [];
 
-  const pokemonMatch = pokemonsList.filter((name) =>
-    name.toLowerCase().match(regex)
-  );
-
-  if (inputValue && pokemonMatch.length !== 0) {
-    containerCards.classList.remove("error");
-    containerCards.innerHTML = "";
-
-    console.log(pokemonMatch.length);
-
-    pokemonMatch.forEach((pokemon) => {
-      const pokemonName = pokemon.toLowerCase();
-
-      fetch(baseURL + pokemonName)
-        .then((data) => data.json())
-        .then(createCard)
-        .catch(console.log);
-    });
-  } else if (inputValue && pokemonMatch.length === 0) {
-    containerCards.classList.add("error");
-    containerCards.innerHTML = `${inputValue} Not Found`;
+  if (inputValue) {
+    pokemonMatch = pokemonsList.filter((name) =>
+      name.toLowerCase().match(regex)
+    );
+    getFilteredPokemon(pokemonMatch);
   } else {
     window.location.reload();
     searchInput.focus();
   }
+}
+
+function getFilteredPokemon(pokemonMatch) {
+  clearCards(containerCards);
+
+  pokemonMatch.forEach((pokemon) => {
+    const pokemonName = pokemon.toLowerCase();
+
+    fetch(baseURL + pokemonName)
+      .then((data) => data.json())
+      .then(createCard)
+      .catch(console.log);
+  });
+}
+
+function clearCards(cards) {
+  cards.innerHTML = "";
 }
