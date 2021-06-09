@@ -4,6 +4,7 @@ const searchInput = document.querySelector(".search input");
 const baseURL = "https://pokeapi.co/api/v2/pokemon/";
 
 const pokemonsList = [];
+let cardsIndex = [];
 
 getInitalsPokemons();
 
@@ -52,6 +53,7 @@ function createCard(pokemon) {
 
   const card = document.createElement("div");
   card.classList.add("card");
+  card.setAttribute("data-pokemon", id);
   card.style.backgroundColor = typesPokemonColors[type];
 
   card.innerHTML = `
@@ -67,6 +69,24 @@ function createCard(pokemon) {
   `;
 
   containerCards.appendChild(card);
+
+  cardsIndex.push(card);
+
+  if (cardsIndex.length === 380) {
+    console.log("bora ajustar ...");
+    insertCardsPerIndexNumber(cardsIndex);
+  }
+}
+
+function insertCardsPerIndexNumber(cards) {
+  const growingCards = cards.sort((a, b) => {
+    return (
+      parseInt(a.getAttribute("data-pokemon")) -
+      parseInt(b.getAttribute("data-pokemon"))
+    );
+  });
+
+  growingCards.forEach((card) => containerCards.appendChild(card));
 }
 
 // filtrando os pokemons
