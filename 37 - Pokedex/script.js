@@ -3,6 +3,7 @@ const searchInput = document.querySelector(".search input");
 
 const baseURL = "https://pokeapi.co/api/v2/pokemon/";
 
+// Você pode busca a lista dos nomes via API caso seja necessário
 const pokemonsList = [
   "bulbasaur",
   "ivysaur",
@@ -386,23 +387,40 @@ const pokemonsList = [
   "mew",
 ];
 
-let cardsIndex = [];
-pokemonsList.forEach((pokemonName) => getPokemons(pokemonName));
+let currentCards = [],
+  currentIndex = 1,
+  lastIndex = 13;
 
-// getInitalsPokemons();
+getPokemonsNames();
 
-// function getInitalsPokemons() {
-//   for (let i = 1; i < 381; i++) {
-//     fetch(baseURL + i)
-//       .then((data) => data.json())
-//       .then((pokemon) => {
-//         pokemonsList.push(pokemon.name);
-//         getPokemons(pokemon.name);
-//       });
+window.addEventListener("scroll", scrolledResquest);
 
-//   }
+function scrolledResquest() {
+  let heigthTop = Math.floor(+containerCards.getBoundingClientRect().bottom);
 
-// }
+  if (currentIndex > 640) {
+    document.onmousedown = () => {
+      if (event.button === 1) return false;
+    };
+  } else if (heigthTop < 2000) {
+    console.log(currentIndex);
+
+    currentIndex = lastIndex;
+    lastIndex += 12;
+    getPokemonsNames();
+  }
+}
+
+function getPokemonsNames() {
+  for (let i = currentIndex; i < lastIndex; i++) {
+    fetch(baseURL + i)
+      .then((data) => data.json())
+      .then((pokemon) => {
+        pokemonsList.push(pokemon.name);
+        getPokemons(pokemon.name);
+      });
+  }
+}
 
 const typesPokemonColors = {
   fire: "#FDDFDF",
@@ -424,7 +442,7 @@ const typesPokemonColors = {
 };
 
 function getPokemons(pokemon) {
-  fetch(baseURL + pokemon.toLocaleLowerCase())
+  fetch(baseURL + pokemon.toLowerCase())
     .then((data) => data.json())
     .then(createCard)
     .catch((err) => console.log(err));
@@ -455,16 +473,13 @@ function createCard(pokemon) {
 
   containerCards.appendChild(card);
 
-  cardsIndex.push(card);
+  currentCards.push(card);
 
-  if (cardsIndex.length === 380) {
-    console.log("bora ajustar ...");
-    insertCardsPerIndexNumber(cardsIndex);
-  }
+  insertCardsPerIndexNumber(currentCards);
 }
 
-function insertCardsPerIndexNumber(cards) {
-  const growingCards = cards.sort((a, b) => {
+function insertCardsPerIndexNumber(currentCards) {
+  const growingCards = currentCards.sort((a, b) => {
     return (
       parseInt(a.getAttribute("data-pokemon")) -
       parseInt(b.getAttribute("data-pokemon"))
@@ -480,7 +495,9 @@ searchInput.focus();
 
 function handleInput({ target }) {
   const inputValue = target.value.toLowerCase();
+
   const regex = new RegExp(`^${inputValue}`);
+
   let pokemonMatch = [];
 
   if (inputValue) {
@@ -489,8 +506,7 @@ function handleInput({ target }) {
     );
     getFilteredPokemon(pokemonMatch);
   } else {
-    clearCards(containerCards);
-    pokemonsList.forEach((pokemon) => getPokemons(pokemon));
+    window.location.reload();
     searchInput.focus();
   }
 }
@@ -506,5 +522,5 @@ function getFilteredPokemon(pokemonMatch) {
 
 function clearCards(cards) {
   cards.innerHTML = "";
-  cardsIndex = [];
+  currentCards = [];
 }
