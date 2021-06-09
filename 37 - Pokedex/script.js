@@ -2,163 +2,25 @@ const containerCards = document.querySelector(".poke-container");
 const searchInput = document.querySelector(".search input");
 
 const baseURL = "https://pokeapi.co/api/v2/pokemon/";
-const pokemonsList = [
-  "Bulbasaur",
-  "Ivysaur",
-  "Venusaur",
-  "Charmander",
-  "Charmeleon",
-  "Charizard",
-  "Squirtle",
-  "Wartortle",
-  "Blastoise",
-  "Caterpie",
-  "Metapod",
-  "Butterfree",
-  "Weedle",
-  "Kakuna",
-  "Beedrill",
-  "Pidgey",
-  "Pidgeotto",
-  "Pidgeot",
-  "Rattata",
-  "Raticate",
-  "Spearow",
-  "Fearow",
-  "Ekans",
-  "Arbok",
-  "Pikachu",
-  "Raichu",
-  "Sandshrew",
-  "Sandslash",
-  "Nidorina",
-  "Nidoqueen",
-  "Nidorino",
-  "Nidoking",
-  "Clefairy",
-  "Clefable",
-  "Vulpix",
-  "Ninetales",
-  "Jigglypuff",
-  "Wigglytuff",
-  "Zubat",
-  "Golbat",
-  "Oddish",
-  "Gloom",
-  "Vileplume",
-  "Paras",
-  "Parasect",
-  "Venonat",
-  "Venomoth",
-  "Diglett",
-  "Dugtrio",
-  "Meowth",
-  "Persian",
-  "Psyduck",
-  "Golduck",
-  "Mankey",
-  "Primeape",
-  "Growlithe",
-  "Arcanine",
-  "Poliwag",
-  "Poliwhirl",
-  "Poliwrath",
-  "Abra",
-  "Kadabra",
-  "Alakazam",
-  "Machop",
-  "Machoke",
-  "Machamp",
-  "Bellsprout",
-  "Weepinbell",
-  "Victreebel",
-  "Tentacool",
-  "Tentacruel",
-  "Geodude",
-  "Graveler",
-  "Golem",
-  "Ponyta",
-  "Rapidash",
-  "Slowpoke",
-  "Slowbro",
-  "Magnemite",
-  "Magneton",
-  "Farfetchd",
-  "Doduo",
-  "Dodrio",
-  "Seel",
-  "Dewgong",
-  "Grimer",
-  "Muk",
-  "Shellder",
-  "Cloyster",
-  "Gastly",
-  "Haunter",
-  "Gengar",
-  "Onix",
-  "Drowzee",
-  "Hypno",
-  "Krabby",
-  "Kingler",
-  "Voltorb",
-  "Electrode",
-  "Exeggcute",
-  "Exeggutor",
-  "Cubone",
-  "Marowak",
-  "Hitmonlee",
-  "Hitmonchan",
-  "Lickitung",
-  "Koffing",
-  "Weezing",
-  "Rhyhorn",
-  "Rhydon",
-  "Chansey",
-  "Tangela",
-  "Kangaskhan",
-  "Horsea",
-  "Seadra",
-  "Goldeen",
-  "Seaking",
-  "Staryu",
-  "Starmie",
-  "Mr-mime",
-  "Nidoran-m",
-  "Scyther",
-  "Jynx",
-  "Electabuzz",
-  "Magmar",
-  "Pinsir",
-  "Tauros",
-  "Magikarp",
-  "Gyarados",
-  "Lapras",
-  "Ditto",
-  "Eevee",
-  "Vaporeon",
-  "Jolteon",
-  "Flareon",
-  "Porygon",
-  "Omanyte",
-  "Omastar",
-  "Kabuto",
-  "Kabutops",
-  "Aerodactyl",
-  "Snorlax",
-  "Articuno",
-  "Zapdos",
-  "Moltres",
-  "Dratini",
-  "Dragonair",
-  "Dragonite",
-  "Mewtwo",
-  "Mew",
-];
 
-getPokemons(baseURL);
+const pokemonsList = [];
 
-const typesColor = {
+getInitalsPokemons();
+
+function getInitalsPokemons() {
+  for (let i = 1; i < 381; i++) {
+    fetch(baseURL + i)
+      .then((data) => data.json())
+      .then((pokemon) => {
+        pokemonsList.push(pokemon.name);
+        getPokemons(pokemon.name);
+      });
+  }
+}
+
+const typesPokemonColors = {
   fire: "#FDDFDF",
+  dark: "#9e9e9e",
   grass: "#DEFDE0",
   electric: "#FCF7DE",
   water: "#DEF3FD",
@@ -168,19 +30,18 @@ const typesColor = {
   poison: "#98d7a5",
   bug: "#f8d5a3",
   dragon: "#97b3e6",
+  ice: "#9dc7e2",
   psychic: "#eaeda1",
   flying: "#F5F5F5",
   fighting: "#E6E0D4",
   normal: "#F5F5F5",
 };
 
-function getPokemons(url) {
-  pokemonsList.forEach((pokemon) => {
-    fetch(baseURL + pokemon.toLocaleLowerCase())
-      .then((data) => data.json())
-      .then(createCard)
-      .catch((err) => console.log(err));
-  });
+function getPokemons(pokemon) {
+  fetch(baseURL + pokemon.toLocaleLowerCase())
+    .then((data) => data.json())
+    .then(createCard)
+    .catch((err) => console.log(err));
 }
 
 function createCard(pokemon) {
@@ -191,13 +52,13 @@ function createCard(pokemon) {
 
   const card = document.createElement("div");
   card.classList.add("card");
-  card.style.backgroundColor = typesColor[type];
+  card.style.backgroundColor = typesPokemonColors[type];
 
   card.innerHTML = `
       <div class="image">
       <img
         src=${image}
-        alt=""
+        alt=${name}
       />
       </div>
       <span class="number">#${id}</span>
@@ -233,11 +94,7 @@ function getFilteredPokemon(pokemonMatch) {
 
   pokemonMatch.forEach((pokemon) => {
     const pokemonName = pokemon.toLowerCase();
-
-    fetch(baseURL + pokemonName)
-      .then((data) => data.json())
-      .then(createCard)
-      .catch(console.log);
+    getPokemons(pokemonName);
   });
 }
 
