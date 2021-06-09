@@ -489,7 +489,8 @@ function handleInput({ target }) {
     );
     getFilteredPokemon(pokemonMatch);
   } else {
-    window.location.reload();
+    clearCards(containerCards);
+    pokemonsList.forEach((pokemon) => getPokemons(pokemon));
     searchInput.focus();
   }
 }
@@ -505,4 +506,5 @@ function getFilteredPokemon(pokemonMatch) {
 
 function clearCards(cards) {
   cards.innerHTML = "";
+  cardsIndex = [];
 }
