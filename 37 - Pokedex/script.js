@@ -387,11 +387,8 @@ const pokemonsList = [
 ];
 
 let cardsIndex = [];
-let growingCards = [];
-
 pokemonsList.forEach((pokemonName) => getPokemons(pokemonName));
 
-// Pode iniciar puxando os nomes via fetch ou ter um array com os nomes dos pokemons
 // getInitalsPokemons();
 
 // function getInitalsPokemons() {
@@ -460,7 +457,14 @@ function createCard(pokemon) {
 
   cardsIndex.push(card);
 
-  growingCards = cardsIndex.sort((a, b) => {
+  if (cardsIndex.length === 380) {
+    console.log("bora ajustar ...");
+    insertCardsPerIndexNumber(cardsIndex);
+  }
+}
+
+function insertCardsPerIndexNumber(cards) {
+  const growingCards = cards.sort((a, b) => {
     return (
       parseInt(a.getAttribute("data-pokemon")) -
       parseInt(b.getAttribute("data-pokemon"))
