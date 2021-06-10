@@ -15,7 +15,7 @@ window.addEventListener("scroll", scrolledResquest);
 function scrolledResquest() {
   let heigthTop = Math.floor(+containerCards.getBoundingClientRect().bottom);
 
-  if (currentIndex > 640) {
+  if (lastIndex > 640) {
     document.onmousedown = () => {
       if (event.button === 1) return false;
     };
@@ -139,19 +139,20 @@ function handleInput({ target }) {
       name.toLowerCase().match(regex)
     );
 
+    getFilteredPokemon(pokemonMatch);
+
     document.onmousedown = () => {
       if (event.button === 1) return false;
     };
-    getFilteredPokemon(pokemonMatch);
   } else {
-    clearCards(containerCards);
+    resetPokemons(containerCards);
     getPokemonsNames();
     searchInput.focus();
   }
 }
 
 function getFilteredPokemon(pokemonMatch) {
-  clearCards(containerCards);
+  resetPokemons();
 
   pokemonMatch.forEach((pokemon) => {
     const pokemonName = pokemon.toLowerCase();
@@ -159,7 +160,9 @@ function getFilteredPokemon(pokemonMatch) {
   });
 }
 
-function clearCards(cards) {
-  cards.innerHTML = "";
+function resetPokemons() {
+  containerCards.innerHTML = "";
+  currentIndex = 1;
+  lastIndex = 13;
   currentCards = [];
 }
