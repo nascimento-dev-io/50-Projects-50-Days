@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:300,700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: whitesmoke;
+
+  font-family: "Muli", sans-serif;
+}
+
+.verify-account-wrapper {
+  max-width: 95%;
+  width: 450px;
+  padding: 30px 25px;
+
+  border: 3px solid rgb(82, 80, 80);
+  border-radius: 25px;
+
+  background-color: rgb(248, 247, 244);
+}
+
+.verify-account-wrapper h4 {
+  text-align: center;
+
+  margin: 15px 0;
+  font-size: 1.5rem;
+  font-weight: bolder;
+
+  color: black;
+}
+
+.verify-account-wrapper p {
+  font-size: 0.7rem;
+  font-weight: bold;
+
+  margin: 5px 0;
+
+  text-align: center;
+}
+
+.numbers-container {
+  width: 100%;
+
+  margin: 25px 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+.numbers-container .number {
+  width: 50px;
+  height: 60px;
+
+  font-size: 3.2rem;
+
+  background-color: rgb(248, 247, 244);
+
+  color: rgb(138, 136, 136);
+
+  text-align: center;
+
+  border: none;
+
+  border-radius: 5px;
+
+  margin: 10px 5px;
+
+  outline: none;
+
+  box-shadow: 0 0 2px rgb(189, 187, 187);
+}
+
+.number::-webkit-outer-spin-button,
+.number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.numbers-container .number:focus {
+  box-shadow: 0 0 4px 2px steelblue;
+}
+
+.verify-account-wrapper p.footer {
+  width: 70%;
+
+  margin: 35px auto 10px;
+
+  font-size: 0.7rem;
+  padding: 10px;
+
+  border-radius: 5px;
+
+  color: rgb(151, 151, 151);
+
+  background-color: rgb(233, 231, 231);
+}
