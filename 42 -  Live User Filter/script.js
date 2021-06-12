@@ -2,8 +2,8 @@ const url =
   "https://randomuser.me/api/?inc=picture,name,location,page=1&results=50";
 
 const containerUsers = document.querySelector(".users");
-
 const inputFilter = document.querySelector("#search");
+
 let listCards = [];
 
 getUsers();
