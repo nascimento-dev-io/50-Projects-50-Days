@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Roboto", sans-serif;
+}
+
+.users-wrapper{
+  width: 270px;
+  height: auto;
+
+  border-radius: 10px;
+
+  border: 2px solid rgb(204, 203, 203);;
+
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+header{
+  width: 100%;
+
+  border-radius: 10px 10px 0 0;
+
+  padding: 15px;
+
+  padding-bottom: 25px;
+  background-color: rgb(59, 59, 196)  ;
+  color: whitesmoke;
+}
+
+header h1{
+  font-size: 1rem;
+}
+
+header p{
+  font-size: .8rem;
+  font-weight: bold;
+
+  margin: 0 0 20px 0;
+}
+
+.input-container{
+  width: 100%;
+}
+
+.input-container input{
+  background-color: rgba(0, 0, 0, 0.3);
+
+  border: 0;
+
+  border-radius: 50px;
+
+  color: #fff;
+
+  font-size: 14px;
+
+  padding: 10px 15px;
+  outline: none;
+  width: 100%;
+}
+
+.input-container input::placeholder{
+  color: rgb(141, 72, 47);
+}
+
+.users{
+  width: 100%;
+
+  height: 270px;
+
+  overflow-y: auto;
+}
+
+
+.user-card{
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+
+  margin: 20px 0;
+}
+
+.user-card.hide{
+  display: none;
+}
+
+.user-card img{
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+
+  margin: 10px;
+
+  object-fit: cover;
+
+  background-color: rebeccapurple;
+}
+
+.user-card .user-info{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.user-info .name{
+  font-weight: bold;
+
+  font-size: .9rem;
+
+  margin-bottom: 8px;
+}
+
+.user-info .location{
+  font-size: .7rem;
+
+  color: gray;
+}
