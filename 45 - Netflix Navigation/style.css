@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Muli", sans-serif;
+}
+
+.menu-burguer{
+  width: 30px;
+  height: 30px;
+
+  padding: 3px;
+
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.menu-burguer label{
+  cursor: pointer;
+}
+
+.menu-burguer span{
+  display: block;
+
+  height: 3px;
+  width: 100%;
+
+  margin-bottom: 4px;
+
+  background-color: rgb(49, 48, 48);
+}
+
+.menu-burguer #burguer{
+  width: 0.1px;
+  height: 0.1px;
+
+  position: absolute;
+  left: -100px;
+
+}
+
+.logo-wrapper{
+  width: 220px;
+  padding: 25px 0;
+  border-radius: 25px;
+
+  text-align: center;
+
+  text-transform: uppercase;
+}
+
+/* abrindo o menu */
+.navigation.animation-right, 
+.navigation.animation-right .layer-red, .navigation.animation-right .layer-black, .navigation.animation-right .menu
+{
+  transform: translateX(0);
+}
+
+.animation-right .layer-black{
+  transition-delay: 300ms;
+}
+.animation-right .layer-red{
+  transition-delay: 500ms;
+}
+.animation-right .menu{
+  transition-delay: 700ms;
+}
+
+.navigation{
+  width: 320px;
+  height: 100vh;
+
+  position:fixed;
+  top: 0;
+  left: 0;
+
+  transform: translateX(-101%);
+
+  transition: transform 1.5s;
+}
+
+.navigation > div{
+  position: fixed;
+
+  transition: transform 1.5s;
+
+  transform: translateX(-101%);
+}
+
+.layer-black{
+  width: 95%;
+  height: 100%;
+
+  background-color: black;
+
+  transition-delay: 700ms;
+}
+.layer-red{
+  width: 90%;
+  height: 100%;
+
+  transform: translateX(-101%);
+
+  background-color: rgb(247, 45, 45);
+
+  transition-delay: 500ms;
+}
+
+.menu{
+  width: 85%;
+  height: 100%;
+
+  padding: 25px;
+
+  transform: translateX(-101%);
+
+  background-color: whitesmoke;
+
+  transition-delay: 300ms;
+}
+
+.menu header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.menu header img{
+  width: 120px;
+
+}
+
+.menu header span.close{
+  color: rgb(54, 53, 53);
+
+  font-size: 1rem;
+
+  padding: 5px;
+
+  cursor: pointer;
+}
+
+.menu header span.close i{
+  color: rgb(155, 152, 152);
+
+  font-weight: normal;
+}
+
+
+.menu .menu-options,.menu .menu-options ul {
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+
+  font-size: .8rem;
+
+  text-transform: uppercase;
+}
+
+.menu .menu-options{
+  margin-top: 30px;
+}
+
+.menu .menu-options  ul{
+  margin: 10px 0 0 15px;
+}
+
+.menu .menu-options li,.menu .menu-options li{
+  padding: 7px;
+
+  cursor: pointer;
+}
+
+.menu .menu-options li:hover,.menu .menu-options li:hover{
+  font-weight: bold;
+ 
+}
+
+
+
