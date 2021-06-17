@@ -13,12 +13,13 @@ closeButtonEndGame.addEventListener("click", () => {
   gameOverEl.classList.remove("show");
 });
 
-let timeInterval = 1000,
+let intervalSetInsect = 1000,
   insectChoiced = "",
   timePlayedMin = 0,
   timePlayedSeg = 0,
   score = 0,
-  inter;
+  intervalTimer,
+  intervalInsect;
 
 insectChoose.forEach((insect) => {
   insect.addEventListener("click", gameInit);
@@ -31,7 +32,7 @@ function gameInit(event) {
     .querySelector("h3")
     .textContent.toLowerCase();
 
-  setInterval(() => {
+  intervalTimer = setInterval(() => {
     timePlayedSeg++;
 
     if (timePlayedSeg > 59) {
@@ -44,11 +45,11 @@ function gameInit(event) {
     }:${timePlayedSeg < 10 ? "0" + timePlayedSeg : timePlayedSeg}`;
   }, 1000);
 
-  playGame(insectChoiced, timeInterval);
+  playGame(insectChoiced, intervalSetInsect);
 }
 
 function playGame(insectChoiced, time) {
-  inter = setInterval(() => {
+  intervalInsect = setInterval(() => {
     const insect = document.createElement("img");
     insect.src = `./images/${insectChoiced}.png`;
     insect.addEventListener("click", catchInsect);
@@ -66,10 +67,10 @@ function catchInsect({ target }) {
   score++;
   scoreEl.textContent = score;
 
-  timeInterval -= 100;
-  clearInterval(inter);
+  intervalSetInsect -= 100;
+  clearInterval(intervalInsect);
 
-  playGame(insectChoiced, timeInterval);
+  playGame(insectChoiced, intervalSetInsect);
 
   setTimeout(() => target.remove(), 550);
 }
@@ -97,11 +98,12 @@ function insectCount() {
 }
 
 function resetGame() {
-  clearInterval(inter);
+  clearInterval(intervalInsect);
+  clearInterval(intervalTimer);
   gameContainer.innerHTML = "";
   scoreEl.textContent = "0";
   timePlayedMin = 0;
   timePlayedSeg = 0;
-  timeInterval = 1000;
+  intervalSetInsect = 1000;
   score = 0;
 }
