@@ -95,3 +95,9 @@ h1 {
 .todo-container .todo-list .todo.done {
   text-decoration: line-through;
 }
+
+small {
+  text-align: center;
+
+  color: rgb(129, 126, 126);
+}

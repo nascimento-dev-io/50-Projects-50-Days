@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insect Catch Game</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="play-game">
+      <h1>Catch The Insect</h1>
+      <a href="#choice-insect">Play Game</a>
+    </section>
+
+    <section id="choice-insect">
+      <h1>Whats is Your "favorite" insect?</h1>
+      <div class="insect-container">
+        <div class="fly">
+          <a href="#game">
+            <h3>Fly</h3>
+            <img src="./images/fly.png" alt="fly"
+          /></a>
+        </div>
+
+        <div class="mosquito">
+          <a href="#game">
+            <h3>Mosquito</h3>
+            <img src="./images/mosquito.png" alt="mosquito"
+          /></a>
+        </div>
+
+        <div class="spider">
+          <a href="#game">
+            <h3>Spider</h3>
+            <img src="./images/spider.png" alt="spider"
+          /></a>
+        </div>
+
+        <div class="roach">
+          <a href="#game">
+            <h3>Roach</h3>
+            <img src="./images/roach.png" alt="roach"
+          /></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="game">
+      <header>
+        <div class="time-wrapper">
+          <span>Time : <span class="time">00:00</span></span>
+        </div>
+
+        <div class="score-wrapper">
+          <span>Score: <span class="score">0</span></span>
+        </div>
+      </header>
+
+      <div id="container-game"></div>
+    </section>
+
+    <section class="game-over">
+      <div class="end-game">
+        <h1>Game Over</h1>
+
+        <a href="#play-game">Tentar Novamente</a>
+
+        <small> this is an impossible game to win :)</small>
+      </div>
+    </section>
+    <script src="./script.js"></script>
+  </body>
+</html>

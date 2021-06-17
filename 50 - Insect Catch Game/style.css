@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: whitesmoke;
+
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  background-color: rgb(76, 94, 250);
+
+  /* padding: 50px; */
+
+  font-size: 10px;
+
+  font-family: "Press Start 2P", sans-serif;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(76, 94, 250);
+}
+
+section h1 {
+  margin: 80px 0;
+  font-size: 1.8rem;
+}
+
+img {
+  width: 120px;
+
+  overflow: hidden;
+
+  object-fit: contain;
+}
+
+#play-game a {
+  padding: 15px 25px;
+
+  background-color: whitesmoke;
+  color: rgb(76, 94, 250);
+
+  font-weight: bold;
+
+  border-radius: 8px;
+}
+
+#choice-insect .insect-container {
+  display: flex;
+  justify-content: space-evenly;
+
+  max-width: 100%;
+  width: 550px;
+
+  /* gap: 8px; */
+}
+
+.insect-container a {
+  width: 120px;
+  height: 120px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 1px solid whitesmoke;
+
+  transition: all 0.5s;
+}
+
+.insect-container a:hover {
+  background-color: whitesmoke;
+
+  color: rgb(76, 94, 250);
+}
+
+.insect-container a:hover > h3 {
+  color: rgb(76, 94, 250);
+}
+
+.insect-container a h3 {
+  margin: 5px 0;
+}
+
+/* .insect-container a img {
+  width: 120px;
+
+  overflow: hidden;
+
+  object-fit: contain;
+} */
+
+#game {
+  justify-content: initial;
+
+  padding: 25px 50px;
+}
+
+#game header {
+  height: 35px;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+header .time-wrapper,
+header .score-wrapper {
+  display: flex;
+  align-items: center;
+  height: 35px;
+}
+
+#game header span {
+  font-size: 1.3rem;
+}
+
+#game #container-game {
+  width: 100%;
+  height: calc(100vh - 35px);
+
+  position: relative;
+}
+
+#game #container-game img {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 70px;
+}
+
+#game #container-game img.catch {
+  transform: scale(0);
+
+  transition: transform 500ms ease-in;
+}
+
+.game-over {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  margin: 0 auto;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(127, 139, 243);
+}
+
+.game-over.show {
+  display: flex;
+}
+
+.game-over .end-game {
+  max-width: 100%;
+  width: 500px;
+  min-height: 250px;
+
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  background-color: rgb(76, 94, 250);
+  color: whitesmoke;
+
+  border-radius: 20px;
+}
+
+.game-over .end-game h1 {
+  font-size: 2rem;
+
+  margin: 0;
+
+  text-align: center;
+}
+
+.game-over .end-game a {
+  padding: 10px 25px;
+
+  background-color: whitesmoke;
+  color: rgb(76, 94, 250);
+
+  font-weight: bold;
+
+  font-size: 0.9rem;
+
+  border-radius: 10px;
+
+  animation-name: scaleButton;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
+@keyframes scaleButton {
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
