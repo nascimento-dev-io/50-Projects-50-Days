@@ -34,7 +34,12 @@ section {
 
 section h1 {
   margin: 80px 0;
-  font-size: 1.8rem;
+
+  font-size: 1.5rem;
+
+  text-align: center;
+
+  line-height: 35px;
 }
 
 img {
@@ -58,12 +63,13 @@ img {
 
 #choice-insect .insect-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-wrap: wrap;
 
-  max-width: 100%;
+  max-width: 90%;
   width: 550px;
 
-  /* gap: 8px; */
+  gap: 8px;
 }
 
 .insect-container a {
@@ -123,7 +129,11 @@ header .score-wrapper {
 }
 
 #game header span {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
+
+  line-height: 25px;
+
+  text-align: center;
 }
 
 #game #container-game {
@@ -197,6 +207,11 @@ header .score-wrapper {
 }
 
 .game-over .end-game a {
+  width: 75%;
+  /* height: 50px; */
+
+  text-align: center;
+
   padding: 10px 25px;
 
   background-color: whitesmoke;
@@ -221,5 +236,43 @@ header .score-wrapper {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@media (max-width: 530px) {
+  section h1 {
+    font-size: 1.3rem;
+
+    margin: 40px 0;
+  }
+
+  #choice-insect h1 {
+    font-size: 1rem;
+
+    margin: 40px 10px;
+  }
+
+  #game {
+    padding: 15px;
+  }
+
+  #game header span {
+    margin: 8px;
+    font-size: 0.8rem;
+  }
+
+  .game-over .end-game {
+    width: 350px;
+  }
+
+  .game-over .end-game h1 {
+    font-size: 1.4rem;
+  }
+
+  .game-over .end-game a {
+    padding: 5px 15px;
+
+    line-height: 20px;
+    font-size: 0.8rem;
   }
 }
