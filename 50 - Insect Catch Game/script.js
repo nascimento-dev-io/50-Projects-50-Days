@@ -101,6 +101,7 @@ function resetGame() {
   clearInterval(intervalInsect);
   clearInterval(intervalTimer);
   gameContainer.innerHTML = "";
+  timeEl.textContent = "00:00";
   scoreEl.textContent = "0";
   timePlayedMin = 0;
   timePlayedSeg = 0;
